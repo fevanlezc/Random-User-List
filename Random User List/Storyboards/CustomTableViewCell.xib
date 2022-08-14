@@ -10,42 +10,42 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" restorationIdentifier="customCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="myCustomCell" rowHeight="180" id="KGk-i7-Jjw" customClass="TableViewCell" customModule="Random_User_List" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="367" height="180"/>
+        <tableViewCell contentMode="scaleToFill" restorationIdentifier="customCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="myCustomCell" rowHeight="143" id="KGk-i7-Jjw" customClass="TableViewCell" customModule="Random_User_List" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="367" height="143"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="367" height="180"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="367" height="143"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="María Martinez" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QgT-Fz-6lB">
-                        <rect key="frame" x="140" y="30" width="217" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <rect key="frame" x="120" y="20" width="237" height="24"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="mariamar01@hotmail.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="20V-aP-vpQ">
-                        <rect key="frame" x="140" y="66" width="217" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <rect key="frame" x="120" y="59" width="237" height="19.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Femenino" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eOb-x8-PrA">
-                        <rect key="frame" x="140" y="102" width="197" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <rect key="frame" x="120" y="93.5" width="217" height="19.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Cdt-Db-WER">
-                        <rect key="frame" x="10" y="31.5" width="120" height="117.5"/>
+                        <rect key="frame" x="10" y="26.5" width="100" height="97.5"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="120" id="Knc-dF-spx"/>
-                            <constraint firstAttribute="width" constant="120" id="dq1-O9-A9K"/>
+                            <constraint firstAttribute="height" constant="100" id="Knc-dF-spx"/>
+                            <constraint firstAttribute="width" constant="100" id="dq1-O9-A9K"/>
                         </constraints>
                     </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="eOb-x8-PrA" firstAttribute="leading" secondItem="Cdt-Db-WER" secondAttribute="trailing" constant="10" id="BIq-RT-Min"/>
-                    <constraint firstItem="QgT-Fz-6lB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="30" id="E5W-zo-Qj2"/>
+                    <constraint firstItem="QgT-Fz-6lB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="E5W-zo-Qj2"/>
                     <constraint firstItem="eOb-x8-PrA" firstAttribute="top" secondItem="20V-aP-vpQ" secondAttribute="bottom" constant="15" id="Iy1-nP-LOb"/>
                     <constraint firstItem="QgT-Fz-6lB" firstAttribute="leading" secondItem="Cdt-Db-WER" secondAttribute="trailing" constant="10" id="Zwc-AB-ORT"/>
                     <constraint firstItem="Cdt-Db-WER" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="buA-KZ-TbX"/>
@@ -54,7 +54,7 @@
                     <constraint firstItem="20V-aP-vpQ" firstAttribute="leading" secondItem="Cdt-Db-WER" secondAttribute="trailing" constant="10" id="q0Y-Gq-X0I"/>
                     <constraint firstItem="20V-aP-vpQ" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" constant="10" id="uKD-BI-4R0"/>
                     <constraint firstAttribute="trailing" secondItem="QgT-Fz-6lB" secondAttribute="trailing" constant="10" id="uWh-Zu-78X"/>
-                    <constraint firstItem="Cdt-Db-WER" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="30" id="vX1-l6-t0z"/>
+                    <constraint firstItem="Cdt-Db-WER" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="25" id="vX1-l6-t0z"/>
                     <constraint firstAttribute="trailingMargin" secondItem="eOb-x8-PrA" secondAttribute="trailing" constant="10" id="wgp-1X-V2M"/>
                 </constraints>
             </tableViewCellContentView>
@@ -65,7 +65,7 @@
                 <outlet property="lblName" destination="QgT-Fz-6lB" id="dA0-lA-Mh9"/>
                 <outlet property="userImageView" destination="Cdt-Db-WER" id="ikL-co-WPv"/>
             </connections>
-            <point key="canvasLocation" x="165.94202898550725" y="110.49107142857143"/>
+            <point key="canvasLocation" x="165.94202898550725" y="105.46875"/>
         </tableViewCell>
     </objects>
     <resources>

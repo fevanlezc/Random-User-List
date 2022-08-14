@@ -24,14 +24,7 @@ class TableViewCell: UITableViewCell {
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        print("se seleccionó")
-        
-//        DispatchQueue.main.async {
-//            let userDetailSB = UIStoryboard(name: "UserDetail", bundle: nil)
-//            let userDetailVC = userDetailSB.instantiateViewController(identifier: "UserDetailVC") as! UserDetailVC
-//            self.context.performSegue(withIdentifier: "UserDetailSegue", sender: self)
-//        }
-        
+     
     }
     
 }

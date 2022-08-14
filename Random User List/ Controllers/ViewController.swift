@@ -47,6 +47,8 @@ extension ViewController: UITableViewDataSource {
 extension ViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "userDetailSegue", sender: self)
+        print("se seleccionó")
+        NetworkingProvider.shared.getUser()
         
     }
 }
