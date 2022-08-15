@@ -11,8 +11,8 @@ class ViewController: UIViewController{
     
     var userDetail = UserDetailVC()
     
-//    var networkingProvider = NetworkingProvider()
     @IBOutlet public var tableView: UITableView!
+    @IBOutlet var segmentedControl: UISegmentedControl!
     
     private let myCountries = ["Argentina", "Colombia", "Argelia", "Perú", "Bolivia", "Uruguay"]
     
@@ -24,18 +24,45 @@ class ViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        getUsers()
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.register(UINib(nibName: "CustomTableViewCell", bundle: nil), forCellReuseIdentifier: "myCustomCell")
+    }
+    
+    func getUsers(){
         NetworkingProvider.shared.getUser { users, error in
                   if let users = users {
                       self.users = users
                   }
              }
-        
-        print(users.count)
-//        self.tableView.reloadData()
-        tableView.dataSource = self
-        tableView.delegate = self
-        tableView.register(UINib(nibName: "CustomTableViewCell", bundle: nil), forCellReuseIdentifier: "myCustomCell")
+    }
+    
+    
+    @IBAction func segmentedControlAction(_ sender: Any) {
+        switch segmentedControl.selectedSegmentIndex{
+        case 0: NetworkingProvider.shared.urlListadoCompleto = NetworkingProvider.shared.urlListadoMasculino
+            getUsers()
+        case 1: NetworkingProvider.shared.urlListadoCompleto = NetworkingProvider.shared.urlListadoFemenino
+            getUsers()
+        default:
+            print("unknown")
+        }
+    }
+    
+    @IBAction func btnLimpiarFiltro(_ sender: Any) {
+        NetworkingProvider.shared.urlListadoCompleto = NetworkingProvider.shared.urlBase
+        getUsers()
+        print(NetworkingProvider.shared.urlListadoCompleto)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "userDetailSegue"{
+            guard let userDetailVC = segue.destination as? UserDetailVC else { return }
+            guard let indexPath = tableView.indexPathForSelectedRow else { return }
+            let user = users[indexPath.row]
+            userDetailVC.user = user
+        }
     }
     
     
@@ -49,9 +76,10 @@ extension ViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCustomCell", for: indexPath) as? TableViewCell
-        cell?.lblName.text = "\(users.first?.name?.first ?? "" ) \(users.first?.name?.last ?? "")"
-        cell?.lblGender.text = users.first?.gender
-        cell?.lblEmail.text = users.first?.email
+        let user = users[indexPath.row]
+        cell?.lblName.text = "\(user.name?.first ?? "First") \(user.name?.last! ?? "Last")"
+        cell?.lblGender.text = "Gender: \(user.gender?.capitalized ?? "")"
+        cell?.lblEmail.text = "Email: \(user.email)"
         cell?.accessoryType = .disclosureIndicator
         return cell!
         
@@ -63,14 +91,11 @@ extension ViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "userDetailSegue", sender: self)
         print("se seleccionó")
-//        if let lblName = userDetail.lblNombre.text {
-//            print("El nombre es \(lblName)")
-//        } else {
-//            print("falló")
-//        }
-//        userDetail.lblNombre.text = users.first?.name?.first!
+        
         
     }
 }
+
+
 
 

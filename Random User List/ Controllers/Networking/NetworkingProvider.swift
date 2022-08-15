@@ -13,9 +13,12 @@ final class NetworkingProvider {
     
     var viewController = ViewController()
     
-    private let urlListadoCompleto = "https://randomuser.me/api/?results=50"
-    private let urlListadoFemenino = "https://randomuser.me/api/?results=50&gender=female"
-    private let urlListadoMasculino = "https://randomuser.me/api/?results=50&gender=male"
+    
+    var urlBase = "https://randomuser.me/api/?results=50&inc=gender,name,email,picture,phone,location&noinfo"
+    
+    var urlListadoCompleto = "https://randomuser.me/api/?results=50&inc=gender,name,email,picture,phone,location&noinfo"
+    var urlListadoFemenino = "https://randomuser.me/api/?results=50&gender=female"
+    var urlListadoMasculino = "https://randomuser.me/api/?results=50&gender=male"
     private let statusOK = 200...299
     
     
@@ -25,9 +28,6 @@ final class NetworkingProvider {
         AF.request(urlListadoCompleto, method: .get).validate(statusCode: statusOK).responseDecodable (of: UserResult.self){ response in
             if let user = response.value?.results{
                 completion(user, nil)
-//                self.viewController.tableView.reloadData()
-                print(user.first?.name?.first! ?? "Unknown")
-                print(user.count)
             } else {
                 print(response.error?.errorDescription ?? "No error")
                 completion(nil, response.error)

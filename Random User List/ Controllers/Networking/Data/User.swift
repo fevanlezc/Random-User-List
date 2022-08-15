@@ -7,6 +7,8 @@
 
 import Foundation
 
+
+
 struct UserResult: Decodable{
     let results: [User]?
 }

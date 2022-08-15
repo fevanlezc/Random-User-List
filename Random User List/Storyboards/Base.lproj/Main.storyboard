@@ -28,6 +28,9 @@
                                         <rect key="frame" x="0.0" y="0.0" width="130" height="49"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title=" "/>
+                                        <connections>
+                                            <action selector="btnLimpiarFiltro:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pLA-GN-N8s"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Limpiar Filtro" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9cL-tw-vmq">
                                         <rect key="frame" x="19.5" y="16" width="91.5" height="17"/>
@@ -53,6 +56,9 @@
                                     <segment title="Masculino"/>
                                     <segment title="Femenino"/>
                                 </segments>
+                                <connections>
+                                    <action selector="segmentedControlAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="qle-Pn-YQe"/>
+                                </connections>
                             </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -71,6 +77,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="segmentedControl" destination="ves-G8-BKj" id="r84-uq-wai"/>
                         <outlet property="tableView" destination="4un-Wh-xFS" id="Wv0-th-ob2"/>
                         <segue destination="gOg-mh-B7Z" kind="show" identifier="userDetailSegue" id="wvf-x1-Xao"/>
                     </connections>
@@ -82,7 +89,7 @@
         <!--User DetailVC-->
         <scene sceneID="z7u-b3-ePK">
             <objects>
-                <viewController id="gOg-mh-B7Z" customClass="UserDetailVC" customModule="Random_User_List" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="userDetailSB" id="gOg-mh-B7Z" customClass="UserDetailVC" customModule="Random_User_List" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="x75-4C-6kE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -150,7 +157,7 @@
                     <navigationItem key="navigationItem" id="MSS-Bg-983"/>
                     <connections>
                         <outlet property="lblDireccion" destination="QHK-6I-Acr" id="NJw-HO-Gy2"/>
-                        <outlet property="lblNombre" destination="0Oy-bo-sKH" id="tjc-Ec-mr3"/>
+                        <outlet property="lblNombre" destination="0Oy-bo-sKH" id="MY7-RG-HVj"/>
                         <outlet property="lblTelefono" destination="4dR-4B-Q1H" id="8gZ-4L-unk"/>
                         <outlet property="userImageView" destination="mCK-2c-AMY" id="nEJ-ho-uNt"/>
                     </connections>
