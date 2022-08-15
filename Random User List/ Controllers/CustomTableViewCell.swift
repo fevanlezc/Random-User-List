@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class TableViewCell: UITableViewCell {
     
@@ -15,17 +16,27 @@ class TableViewCell: UITableViewCell {
     @IBOutlet var lblGender: UILabel!
     @IBOutlet var userImageView: UIImageView!
     
-    var context = UIViewController()
+    
+//    var user: User? {
+//        didSet {
+//            updateView()
+//        }
+//    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+//        updateView()
     }
+    
+//    func updateView(){
+//        guard let user = user else { return }
+//    }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-     
+        
     }
     
 }
+
 

@@ -7,6 +7,7 @@
 
 import Foundation
 import Alamofire
+import Kingfisher
 
 final class NetworkingProvider {
     static let shared = NetworkingProvider()

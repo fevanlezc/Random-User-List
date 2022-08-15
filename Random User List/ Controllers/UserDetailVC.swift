@@ -11,9 +11,9 @@ class UserDetailVC: UIViewController {
     
     
     @IBOutlet var lblNombre: UILabel?
-    @IBOutlet var lblDireccion: UILabel!
-    @IBOutlet var lblTelefono: UILabel!
-    @IBOutlet var userImageView: UIImageView!
+    @IBOutlet var lblDireccion: UILabel?
+    @IBOutlet var lblTelefono: UILabel?
+    @IBOutlet var userImageView: UIImageView?
     
     
     var user: User? {
@@ -31,6 +31,11 @@ class UserDetailVC: UIViewController {
     func updateView(){
         guard let user = user else { return }
         lblNombre?.text = "\(user.name?.first ?? "First") \(user.name?.last! ?? "Last")"
+        lblDireccion?.text = "\(user.location?.street?.name ?? "") \(user.location?.street?.number ?? 0), \(user.location?.city ?? ""), \(user.location?.state ?? ""), \(user.location?.country ?? "")"
+        lblTelefono?.text = user.phone
+        userImageView?.kf.setImage(with: URL(string: user.picture?.large ?? ""))
+        userImageView?.layer.cornerRadius = 15
+        
     }
     
     

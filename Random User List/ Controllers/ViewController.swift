@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class ViewController: UIViewController{
     
@@ -18,7 +19,7 @@ class ViewController: UIViewController{
     
     var users: [User] = [] {
         didSet {
-            tableView.reloadData() // if you using this then you don't need to reload in viewdidload closure
+            tableView.reloadData()
         }
     }
     
@@ -80,6 +81,8 @@ extension ViewController: UITableViewDataSource {
         cell?.lblName.text = "\(user.name?.first ?? "First") \(user.name?.last! ?? "Last")"
         cell?.lblGender.text = "Gender: \(user.gender?.capitalized ?? "")"
         cell?.lblEmail.text = "Email: \(user.email)"
+        cell?.userImageView.kf.setImage(with: URL(string: user.picture?.thumbnail ?? ""))
+        cell?.userImageView.layer.cornerRadius = 50
         cell?.accessoryType = .disclosureIndicator
         return cell!
         

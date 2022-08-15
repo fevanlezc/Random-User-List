@@ -17,8 +17,9 @@ struct User: Decodable{
     var name: Name?
     var email: String
     var gender: String?
-    var address: String?
+    var location: Location?
     var phone: String?
+    var picture: Picture?
 }
 
 struct Name: Decodable{
@@ -26,4 +27,21 @@ struct Name: Decodable{
     var last: String?
 }
 
+struct Location: Decodable{
+    var street: Street?
+    var city: String?
+    var state: String?
+    var country: String?
+//    var postcode: Int?
+}
 
+struct Street: Decodable{
+    var name: String?
+    var number: Int?
+}
+ 
+struct Picture: Decodable{
+    var large: String?
+    var medium: String?
+    var thumbnail: String?
+}
