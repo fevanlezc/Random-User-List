@@ -11,21 +11,26 @@ import Alamofire
 final class NetworkingProvider {
     static let shared = NetworkingProvider()
     
+    var viewController = ViewController()
+    
     private let urlListadoCompleto = "https://randomuser.me/api/?results=50"
     private let urlListadoFemenino = "https://randomuser.me/api/?results=50&gender=female"
     private let urlListadoMasculino = "https://randomuser.me/api/?results=50&gender=male"
     private let statusOK = 200...299
     
-    var users: [User] = []
     
-    func getUser(){
+    
+    func getUser(completion: @escaping (_ users:[User]?,_ error:Error?) -> Void){
         
         AF.request(urlListadoCompleto, method: .get).validate(statusCode: statusOK).responseDecodable (of: UserResult.self){ response in
-            print(response)
             if let user = response.value?.results{
-                print(user)
+                completion(user, nil)
+//                self.viewController.tableView.reloadData()
+                print(user.first?.name?.first! ?? "Unknown")
+                print(user.count)
             } else {
                 print(response.error?.errorDescription ?? "No error")
+                completion(nil, response.error)
             }
         }
     }

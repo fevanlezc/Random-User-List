@@ -17,9 +17,8 @@ class UserDetailVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         lblNombre.text = "Gustavo Cerati"
-        
+      
     }
 
 

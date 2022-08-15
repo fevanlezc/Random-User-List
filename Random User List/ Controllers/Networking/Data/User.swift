@@ -13,7 +13,7 @@ struct UserResult: Decodable{
 
 struct User: Decodable{
     var name: Name?
-    var email: String?
+    var email: String
     var gender: String?
     var address: String?
     var phone: String?
@@ -21,6 +21,7 @@ struct User: Decodable{
 
 struct Name: Decodable{
     var first: String?
+    var last: String?
 }
 
 
