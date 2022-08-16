@@ -8,7 +8,6 @@
 import Foundation
 
 
-
 struct UserResult: Decodable{
     let results: [User]?
 }
@@ -32,7 +31,6 @@ struct Location: Decodable{
     var city: String?
     var state: String?
     var country: String?
-//    var postcode: Int?
 }
 
 struct Street: Decodable{

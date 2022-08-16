@@ -131,6 +131,10 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Shw-N0-Cz2">
+                                <rect key="frame" x="195" y="59" width="24" height="5"/>
+                                <color key="backgroundColor" systemColor="systemGray4Color"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="WGG-xg-ogA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -143,8 +147,12 @@
                             <constraint firstItem="WGG-xg-ogA" firstAttribute="trailing" secondItem="vr4-cZ-JdV" secondAttribute="trailing" constant="30" id="EgB-pm-9yo"/>
                             <constraint firstItem="WGG-xg-ogA" firstAttribute="trailing" secondItem="QHK-6I-Acr" secondAttribute="trailing" constant="30" id="HTo-2b-5aE"/>
                             <constraint firstItem="0Oy-bo-sKH" firstAttribute="top" secondItem="WGG-xg-ogA" secondAttribute="top" constant="30" id="NAU-cp-Fhw"/>
+                            <constraint firstItem="Shw-N0-Cz2" firstAttribute="leading" secondItem="x75-4C-6kE" secondAttribute="leadingMargin" constant="175" id="QQX-xG-vmk"/>
+                            <constraint firstItem="Shw-N0-Cz2" firstAttribute="top" secondItem="x75-4C-6kE" secondAttribute="topMargin" constant="15" id="TaE-Ko-JGn"/>
                             <constraint firstItem="QHK-6I-Acr" firstAttribute="leading" secondItem="WGG-xg-ogA" secondAttribute="leading" constant="30" id="V6g-J8-1DS"/>
+                            <constraint firstItem="0Oy-bo-sKH" firstAttribute="top" secondItem="Shw-N0-Cz2" secondAttribute="bottom" constant="10" id="ZCq-PV-RYR"/>
                             <constraint firstItem="Kw8-2U-o5O" firstAttribute="top" secondItem="mCK-2c-AMY" secondAttribute="bottom" constant="40" id="bfS-MM-fuD"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Shw-N0-Cz2" secondAttribute="trailing" constant="175" id="d1O-J1-XRO"/>
                             <constraint firstItem="WGG-xg-ogA" firstAttribute="trailing" secondItem="Kw8-2U-o5O" secondAttribute="trailing" constant="30" id="esw-AQ-tCX"/>
                             <constraint firstItem="0Oy-bo-sKH" firstAttribute="leading" secondItem="WGG-xg-ogA" secondAttribute="leading" constant="30" id="fy1-QF-mnm"/>
                             <constraint firstItem="4dR-4B-Q1H" firstAttribute="top" secondItem="vr4-cZ-JdV" secondAttribute="bottom" constant="10" id="izO-Ug-eaD"/>
@@ -156,6 +164,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="MSS-Bg-983"/>
                     <connections>
+                        <outlet property="handleLineView" destination="Shw-N0-Cz2" id="txu-OU-8EO"/>
                         <outlet property="lblDireccion" destination="QHK-6I-Acr" id="NJw-HO-Gy2"/>
                         <outlet property="lblNombre" destination="0Oy-bo-sKH" id="MY7-RG-HVj"/>
                         <outlet property="lblTelefono" destination="4dR-4B-Q1H" id="8gZ-4L-unk"/>
@@ -174,6 +183,9 @@
         </systemColor>
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

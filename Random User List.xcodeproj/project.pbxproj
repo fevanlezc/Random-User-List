@@ -105,17 +105,17 @@
 			isa = PBXGroup;
 			children = (
 				2EFD0CE328A80A4200D7A8EA /* NetworkingProvider.swift */,
-				2EFD0CE628A80C3A00D7A8EA /* Data */,
+				2EFD0CE628A80C3A00D7A8EA /* Model */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
 		};
-		2EFD0CE628A80C3A00D7A8EA /* Data */ = {
+		2EFD0CE628A80C3A00D7A8EA /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				2EFD0CE728A80C5E00D7A8EA /* User.swift */,
 			);
-			path = Data;
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

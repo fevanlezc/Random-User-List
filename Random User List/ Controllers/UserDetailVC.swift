@@ -13,6 +13,7 @@ class UserDetailVC: UIViewController {
     @IBOutlet var lblNombre: UILabel?
     @IBOutlet var lblDireccion: UILabel?
     @IBOutlet var lblTelefono: UILabel?
+    @IBOutlet var handleLineView: UIView?
     @IBOutlet var userImageView: UIImageView?
     
     
@@ -28,6 +29,8 @@ class UserDetailVC: UIViewController {
         
     }
     
+    
+    // Aquí se actualiza la información que debe cargarse en la vista de detalle de usuario
     func updateView(){
         guard let user = user else { return }
         lblNombre?.text = "\(user.name?.first ?? "First") \(user.name?.last! ?? "Last")"
@@ -35,6 +38,7 @@ class UserDetailVC: UIViewController {
         lblTelefono?.text = user.phone
         userImageView?.kf.setImage(with: URL(string: user.picture?.large ?? ""))
         userImageView?.layer.cornerRadius = 15
+        handleLineView?.layer.cornerRadius = 3
         
     }
     
